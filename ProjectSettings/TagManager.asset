@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Weakpoint
   - Enemy
+  - Shard
+  - Trap
   layers:
   - Default
   - TransparentFX
