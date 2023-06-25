@@ -58,14 +58,8 @@ public class PlayerMovement : MonoBehaviour
         bool isRunning = Mathf.Abs(rb.velocity.x) > 0;
         animator.SetBool("IsRunning", isRunning);
 
-        // Set IsRunning parameter to false if the player is not running
-        if (!isRunning)
-        {
-            animator.SetBool("IsRunning", false);
-        }
-
         // Set IsJumping parameter in the animator based on vertical movement
-        bool isJumping = rb.velocity.y > 0;
+        bool isJumping = rb.velocity.y > 0 && !isGrounded();
         animator.SetBool("IsJumping", isJumping);
 
         // Flip the sprite based on movement direction
@@ -89,6 +83,7 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, 12f);
         }
     }
+
 
     private bool isGrounded()
     {

@@ -868,6 +868,10 @@ MonoBehaviour:
   jumpableGround:
     serializedVersion: 2
     m_Bits: 64
+  knockbackForce: 8
+  knockbackDuration: 0.15
+  enableSlide: 1
+  slideForce: 2
 --- !u!114 &1285843638
 MonoBehaviour:
   m_ObjectHideFlags: 0
