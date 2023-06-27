@@ -1241,6 +1241,7 @@ MonoBehaviour:
   knockbackDuration: 0.15
   enableSlide: 1
   slideForce: 2
+  jumpSoundEffect: {fileID: 0}
 --- !u!114 &1285843638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1773,7 +1774,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1484543347}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: edb69a1bd81be9546865ae344faad68c, type: 3}
   m_Name: 

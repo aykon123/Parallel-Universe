@@ -14,8 +14,8 @@ public class Portal : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Player" && !portalEntered) 
-            { 
+        if (collision.gameObject.name == "Player" && !portalEntered)
+        { 
              ItemCollection itemCollection = collision.GetComponent<ItemCollection>();
             if (itemCollection != null && itemCollection.shards >= ReqShards) 
                 {
