@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -9,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private BoxCollider2D coll;
     private SpriteRenderer spriteRenderer;
+    private Animator animator;
 
     [SerializeField] private LayerMask jumpableGround;
 
@@ -17,12 +17,14 @@ public class PlayerMovement : MonoBehaviour
     private bool isKnockback = false;
     private float knockbackTimer = 0f;
     private Vector2 knockbackDirection;
-    private Animator animator;
 
     [SerializeField] private bool enableSlide = true;
     [SerializeField] private float slideForce = 2f;
 
     [SerializeField] private AudioSource jumpSoundEffect;
+
+    private bool isGrounded = false;
+    private bool canDoubleJump = false;
 
     // Start is called before the first frame update
     private void Start()
@@ -61,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("IsRunning", isRunning);
 
         // Set IsJumping parameter in the animator based on vertical movement
-        bool isJumping = rb.velocity.y > 0 && !isGrounded();
+        bool isJumping = rb.velocity.y > 0 && !isGrounded;
         animator.SetBool("IsJumping", isJumping);
 
         // Flip the sprite based on movement direction
@@ -75,44 +77,44 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Apply sliding effect
-        if (enableSlide && isRunning && isGrounded())
+        if (enableSlide && isRunning && isGrounded)
         {
             rb.AddForce(new Vector2(dirX * slideForce, 0f), ForceMode2D.Force);
         }
 
-        if (Input.GetButtonDown("Jump") && isGrounded())
+        if (Input.GetButtonDown("Jump"))
         {
-            rb.velocity = new Vector2(rb.velocity.x, 12f);
+            if (isGrounded)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, 12f);
+                canDoubleJump = true;
 
-            // Jump Sound Effect
-            jumpSoundEffect.Play();
+                // Jump Sound Effect
+                jumpSoundEffect.Play();
+            }
+            else if (canDoubleJump)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, 12f);
+                canDoubleJump = false;
 
+                // Play jump sound effect again for double jump
+                jumpSoundEffect.Play();
+            }
         }
     }
 
-
-    private bool isGrounded()
+    private void FixedUpdate()
     {
-        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
+        isGrounded = IsGrounded();
+    }
+
+    private bool IsGrounded()
+    {
+        RaycastHit2D hit = Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, 0.1f, jumpableGround);
+        return hit.collider != null;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            // Start knockback effect
-            isKnockback = true;
-            knockbackTimer = 0f;
-
-            // Calculate knockback direction
-            Vector2 enemyPosition = collision.transform.position;
-            Vector2 playerPosition = transform.position;
-            knockbackDirection = (playerPosition - enemyPosition).normalized;
-            knockbackDirection.y = Mathf.Abs(knockbackDirection.y);
-        }
-    }
-
-    private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {

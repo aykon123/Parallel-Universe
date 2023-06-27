@@ -8,11 +8,14 @@ public class ItemCollection : MonoBehaviour
     public int shards = 0;
 
     [SerializeField] private Text shardsText;
+    [SerializeField] private AudioSource collectionSoundEffect;
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     { 
        if (collision.gameObject.CompareTag("Shard"))
         {
+            collectionSoundEffect.Play();
             Destroy(collision.gameObject);
             shards++;
             shardsText.text = "Portal Shards: " + shards;

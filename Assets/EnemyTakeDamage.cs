@@ -9,6 +9,8 @@ public class EnemyTakeDamage : MonoBehaviour
 
     private Rigidbody2D enemyRb;
 
+    [SerializeField] private AudioSource enemyHeadJumpSoundEffect;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -28,6 +30,7 @@ public class EnemyTakeDamage : MonoBehaviour
                 // Destroy the enemy object
                 if (anim != null)
                 {
+                    enemyHeadJumpSoundEffect.Play();
                     anim.SetTrigger("enemy_death");
 
                     // Disable the enemy's Rigidbody2D component to detach it from the player

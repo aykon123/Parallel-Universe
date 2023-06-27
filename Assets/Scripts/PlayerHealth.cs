@@ -12,6 +12,8 @@ public class PlayerHealth : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
 
+    [SerializeField] private AudioSource deathSoundEffect;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -40,6 +42,7 @@ public class PlayerHealth : MonoBehaviour
     private void Die()
     {
         // Game over logic or player death animation here
+        deathSoundEffect.Play();
         UnityEngine.Debug.Log("Player has died"); // Specify UnityEngine.Debug
         rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("death");
