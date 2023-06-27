@@ -22,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private bool enableSlide = true;
     [SerializeField] private float slideForce = 2f;
 
+    [SerializeField] private AudioSource jumpSoundEffect;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -81,6 +83,10 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, 12f);
+
+            // Jump Sound Effect
+            jumpSoundEffect.Play();
+
         }
     }
 
