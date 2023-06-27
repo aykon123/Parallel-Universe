@@ -9,6 +9,7 @@ TagManager:
   - Shard
   - Trap
   - Obstacle
+  - Ladder
   layers:
   - Default
   - TransparentFX

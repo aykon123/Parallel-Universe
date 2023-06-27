@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ItemCollection : MonoBehaviour
 {
-    private int shards = 0;
+    public int shards = 0;
 
     [SerializeField] private Text shardsText;
 
