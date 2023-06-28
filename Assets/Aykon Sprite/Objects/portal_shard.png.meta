@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 80
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -115,8 +115,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 96
-        height: 96
+        width: 105
+        height: 105
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5feb4e2f9093a64459a4d71ead9a79f1
-      internalID: -1316227085
+      spriteID: 880346e5ecb6f5d44bfecd3af7b9f84f
+      internalID: 129413357
       vertices: []
       indices: 
       edges: []
@@ -134,10 +134,10 @@ TextureImporter:
       name: portal_shard_1
       rect:
         serializedVersion: 2
-        x: 96
+        x: 105
         y: 0
-        width: 96
-        height: 96
+        width: 105
+        height: 105
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd0e93d615cabb24f9f608ba7b115a56
-      internalID: -1144908830
+      spriteID: 4b56eed61c7eeba44894453c8491cb45
+      internalID: -782406743
       vertices: []
       indices: 
       edges: []
@@ -155,10 +155,10 @@ TextureImporter:
       name: portal_shard_2
       rect:
         serializedVersion: 2
-        x: 192
+        x: 210
         y: 0
-        width: 96
-        height: 96
+        width: 105
+        height: 105
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20ef3805c72447143aed37e568723042
-      internalID: -1017678289
+      spriteID: 5ae41afc91b92f642a86da5f1f19ec73
+      internalID: 1202859523
       vertices: []
       indices: 
       edges: []
@@ -176,10 +176,10 @@ TextureImporter:
       name: portal_shard_3
       rect:
         serializedVersion: 2
-        x: 288
+        x: 315
         y: 0
-        width: 96
-        height: 96
+        width: 105
+        height: 105
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86c60d51509ba0e4c99287ab798171ba
-      internalID: -325522074
+      spriteID: a90bab593ecac8845b28d5f0cf359f37
+      internalID: -418985644
       vertices: []
       indices: 
       edges: []
@@ -197,10 +197,10 @@ TextureImporter:
       name: portal_shard_4
       rect:
         serializedVersion: 2
-        x: 384
+        x: 420
         y: 0
-        width: 96
-        height: 96
+        width: 105
+        height: 105
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,8 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09b30017674a8894f9c0cdeb228ffd29
-      internalID: -748357857
+      spriteID: b7d8ff65bb2cfe948a90934d5d2dc094
+      internalID: 814732601
       vertices: []
       indices: 
       edges: []
@@ -218,10 +218,10 @@ TextureImporter:
       name: portal_shard_5
       rect:
         serializedVersion: 2
-        x: 480
+        x: 525
         y: 0
-        width: 96
-        height: 96
+        width: 105
+        height: 105
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,8 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b14e139341fb26e488bf2c849f643225
-      internalID: -509962270
+      spriteID: f9561f28255c41b4fa205a9019420603
+      internalID: 350186987
       vertices: []
       indices: 
       edges: []
@@ -239,10 +239,10 @@ TextureImporter:
       name: portal_shard_6
       rect:
         serializedVersion: 2
-        x: 576
+        x: 630
         y: 0
-        width: 96
-        height: 96
+        width: 105
+        height: 105
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,8 +250,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40c986b22d3ad234b8b042751556cb24
-      internalID: -1950949840
+      spriteID: 0e13bb5a4c5fb464abc1587859bb61b2
+      internalID: 327232387
       vertices: []
       indices: 
       edges: []
@@ -260,10 +260,10 @@ TextureImporter:
       name: portal_shard_7
       rect:
         serializedVersion: 2
-        x: 672
+        x: 735
         y: 0
-        width: 96
-        height: 96
+        width: 105
+        height: 105
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,8 +271,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19d374c9baa23174b9ecbba07e56a260
-      internalID: 145491526
+      spriteID: 92cf9a2e1d451ee40940b84d982d6135
+      internalID: -1756402915
       vertices: []
       indices: 
       edges: []
@@ -281,10 +281,10 @@ TextureImporter:
       name: portal_shard_8
       rect:
         serializedVersion: 2
-        x: 768
+        x: 840
         y: 0
-        width: 96
-        height: 96
+        width: 105
+        height: 105
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,8 +292,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 579d432d92717f648a867320bb16d7d1
-      internalID: 272221739
+      spriteID: 8f4f9b7c41cc4c747b16ed4ee71e88f0
+      internalID: -1020565423
       vertices: []
       indices: 
       edges: []
@@ -309,15 +309,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      portal_shard_0: -1316227085
-      portal_shard_1: -1144908830
-      portal_shard_2: -1017678289
-      portal_shard_3: -325522074
-      portal_shard_4: -748357857
-      portal_shard_5: -509962270
-      portal_shard_6: -1950949840
-      portal_shard_7: 145491526
-      portal_shard_8: 272221739
+      portal_shard_0: 129413357
+      portal_shard_1: -782406743
+      portal_shard_2: 1202859523
+      portal_shard_3: -418985644
+      portal_shard_4: 814732601
+      portal_shard_5: 350186987
+      portal_shard_6: 327232387
+      portal_shard_7: -1756402915
+      portal_shard_8: -1020565423
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
