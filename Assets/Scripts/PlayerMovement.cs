@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,20 +21,27 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float slideForce = 2f;
 
     [SerializeField] private AudioSource jumpSoundEffect;
+    [SerializeField] private float fallThreshold = -10f;
+    [SerializeField] private float respawnDelay = 2f;
+    private Vector2 respawnPosition;
 
     private bool isGrounded = false;
     private bool canDoubleJump = false;
 
-    // Start is called before the first frame update
+    [SerializeField] private AudioSource deathSoundEffect;
+
+
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+
+        respawnPosition = transform.position;
     }
 
-    // Update is called once per frame
     private void Update()
     {
         if (isKnockback)
@@ -101,6 +107,12 @@ public class PlayerMovement : MonoBehaviour
                 jumpSoundEffect.Play();
             }
         }
+
+        // Check if player falls below the fall threshold
+        if (transform.position.y < fallThreshold)
+        {
+            Die();
+        }
     }
 
     private void FixedUpdate()
@@ -110,7 +122,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool IsGrounded()
     {
-        RaycastHit2D hit = Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, 0.1f, jumpableGround);
+        RaycastHit2D hit = Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
         return hit.collider != null;
     }
 
@@ -128,5 +140,32 @@ public class PlayerMovement : MonoBehaviour
             knockbackDirection = (playerPosition - enemyPosition).normalized;
             knockbackDirection.y = Mathf.Abs(knockbackDirection.y);
         }
+    }
+
+    private void Die()
+    {
+        // Game over logic or player death animation here
+        deathSoundEffect.Play();
+        UnityEngine.Debug.Log("Player has died"); // Specify UnityEngine.Debug
+        rb.bodyType = RigidbodyType2D.Static;
+        animator.SetTrigger("death");
+
+        // Reset player position to the respawn position
+        transform.position = respawnPosition;
+
+
+        // Delay before re-enabling player control
+        StartCoroutine(EnablePlayerControl(respawnDelay));
+    }
+
+    private IEnumerator EnablePlayerControl(float delay)
+    {
+        // Disable player control during the delay
+        enabled = false;
+
+        yield return new WaitForSeconds(delay);
+
+        // Enable player control after the delay
+        enabled = true;
     }
 }
