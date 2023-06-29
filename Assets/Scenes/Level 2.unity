@@ -1242,6 +1242,9 @@ MonoBehaviour:
   enableSlide: 1
   slideForce: 2
   jumpSoundEffect: {fileID: 0}
+  fallThreshold: -10
+  respawnDelay: 2
+  deathSoundEffect: {fileID: 0}
 --- !u!114 &1285843638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1256,6 +1259,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
+  deathSoundEffect: {fileID: 0}
 --- !u!114 &1285843639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1270,6 +1274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shards: 0
   shardsText: {fileID: 1397751242}
+  collectionSoundEffect: {fileID: 0}
 --- !u!95 &1285843640
 Animator:
   serializedVersion: 5

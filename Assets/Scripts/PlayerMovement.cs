@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isGrounded = false;
     private bool canDoubleJump = false;
+    [SerializeField] private bool disableDoubleJump = false;
 
     [SerializeField] private AudioSource deathSoundEffect;
 
@@ -93,7 +94,9 @@ public class PlayerMovement : MonoBehaviour
             if (isGrounded)
             {
                 rb.velocity = new Vector2(rb.velocity.x, 12f);
+                if(!disableDoubleJump){
                 canDoubleJump = true;
+                }
 
                 // Jump Sound Effect
                 jumpSoundEffect.Play();

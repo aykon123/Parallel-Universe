@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Portal : MonoBehaviour
 {
     [SerializeField] public int ReqShards;
+    [SerializeField] public bool lastLevel = false;
     private bool portalEntered = false;
     private void Start()
     {
@@ -34,6 +35,11 @@ public class Portal : MonoBehaviour
 
     private void CompleteLevel()
     {
+        if(lastLevel){
+         SceneManager.LoadScene(0);
+
+        } else{
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 }
