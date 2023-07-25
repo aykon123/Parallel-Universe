@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -27,11 +28,10 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isGrounded = false;
     private bool canDoubleJump = false;
+
     [SerializeField] private bool disableDoubleJump = false;
 
     [SerializeField] private AudioSource deathSoundEffect;
-
-
 
     private void Start()
     {
@@ -94,8 +94,9 @@ public class PlayerMovement : MonoBehaviour
             if (isGrounded)
             {
                 rb.velocity = new Vector2(rb.velocity.x, 12f);
-                if(!disableDoubleJump){
-                canDoubleJump = true;
+                if (!disableDoubleJump)
+                {
+                    canDoubleJump = true;
                 }
 
                 // Jump Sound Effect
@@ -149,13 +150,14 @@ public class PlayerMovement : MonoBehaviour
     {
         // Game over logic or player death animation here
         deathSoundEffect.Play();
-        UnityEngine.Debug.Log("Player has died"); // Specify UnityEngine.Debug
+        UnityEngine.Debug.Log("Player has died");
+
+
         rb.bodyType = RigidbodyType2D.Static;
         animator.SetTrigger("death");
 
         // Reset player position to the respawn position
         transform.position = respawnPosition;
-
 
         // Delay before re-enabling player control
         StartCoroutine(EnablePlayerControl(respawnDelay));
