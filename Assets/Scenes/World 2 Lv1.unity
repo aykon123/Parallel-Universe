@@ -1653,7 +1653,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shards: 0
-  shardsText: {fileID: 0}
+  shardsText: {fileID: 1733155555}
   collectionSoundEffect: {fileID: 1285843643}
 --- !u!95 &1285843640
 Animator:
