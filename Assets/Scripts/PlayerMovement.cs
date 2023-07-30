@@ -4,51 +4,55 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    // Private variables for player movement and components
     private Rigidbody2D rb;
     private BoxCollider2D coll;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
 
-    [SerializeField] private LayerMask jumpableGround;
+    [SerializeField] private LayerMask jumpableGround; // Layer mask for detecting jumpable ground
 
+    // Variables for knockback effect
     [SerializeField] private float knockbackForce = 10f;
     [SerializeField] private float knockbackDuration = 0.5f;
     private bool isKnockback = false;
     private float knockbackTimer = 0f;
     private Vector2 knockbackDirection;
 
-    [SerializeField] private bool enableSlide = true;
-    [SerializeField] private float slideForce = 2f;
+    [SerializeField] private bool enableSlide = true; // Enable sliding effect
+    [SerializeField] private float slideForce = 2f; // Force applied when sliding
 
-    [SerializeField] private AudioSource jumpSoundEffect;
-    [SerializeField] private float fallThreshold = -10f;
-    [SerializeField] private float respawnDelay = 2f;
-    private Vector2 respawnPosition;
+    [SerializeField] private AudioSource jumpSoundEffect; // Sound effect for jumping
+    [SerializeField] private float fallThreshold = -10f; // Fall threshold for player death
+    [SerializeField] private float respawnDelay = 2f; // Delay before respawning after death
+    private Vector2 respawnPosition; // Respawn position for the player
 
-    private bool isGrounded = false;
-    private bool canDoubleJump = false;
+    private bool isGrounded = false; // Flag for checking if the player is grounded
+    private bool canDoubleJump = false; // Flag for enabling double jump
 
-    private bool isInvertedControls = false;
-    private float invertedControlsDuration = 5f;
-    private float invertedControlsTimer = 0f;
+    private bool isInvertedControls = false; // Flag for inverted controls effect
+    private float invertedControlsDuration = 5f; // Duration of inverted controls effect
+    private float invertedControlsTimer = 0f; // Timer for inverted controls effect
 
-    [SerializeField] private bool disableDoubleJump = false;
+    [SerializeField] private bool disableDoubleJump = false; // Disable double jump if true
 
-    [SerializeField] private AudioSource deathSoundEffect;
+    [SerializeField] private AudioSource deathSoundEffect; // Sound effect for player death
 
-    private bool isJumpBoosted = false;
-    private float jumpBoostHeight = 20f;
+    private bool isJumpBoosted = false; // Flag for jump boost effect
+    private float jumpBoostHeight = 20f; // Height of jump boost
     private float jumpBoostDuration = 5f; // Default duration for the jump boost
-    private float jumpBoostTimer = 0f;
-    private bool isJumpingBoosted = false;
+    private float jumpBoostTimer = 0f; // Timer for the jump boost effect
+    private bool isJumpingBoosted = false; // Flag for checking if the jump boost effect is active
 
     private void Start()
     {
+        // Get references to the components
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
 
+        // Set the respawn position to the initial position of the player
         respawnPosition = transform.position;
     }
 
