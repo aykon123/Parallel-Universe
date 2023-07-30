@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -29,9 +28,19 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded = false;
     private bool canDoubleJump = false;
 
+    private bool isInvertedControls = false;
+    private float invertedControlsDuration = 5f;
+    private float invertedControlsTimer = 0f;
+
     [SerializeField] private bool disableDoubleJump = false;
 
     [SerializeField] private AudioSource deathSoundEffect;
+
+    private bool isJumpBoosted = false;
+    private float jumpBoostHeight = 20f;
+    private float jumpBoostDuration = 5f; // Default duration for the jump boost
+    private float jumpBoostTimer = 0f;
+    private bool isJumpingBoosted = false;
 
     private void Start()
     {
@@ -117,6 +126,62 @@ public class PlayerMovement : MonoBehaviour
         {
             Die();
         }
+
+        if (isInvertedControls)
+        {
+            // Invert horizontal movement
+            float invertedDirX = -Input.GetAxisRaw("Horizontal");
+            rb.velocity = new Vector2(invertedDirX * 7f, rb.velocity.y);
+
+            // Update inverted controls timer
+            invertedControlsTimer -= Time.deltaTime;
+            if (invertedControlsTimer <= 0f)
+            {
+                isInvertedControls = false;
+            }
+        }
+
+        // Check for the jump boost input and apply the effect
+        if (Input.GetButtonDown("Jump") && isJumpBoosted && isGrounded && !isJumpingBoosted)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpBoostHeight);
+            isJumpingBoosted = true;
+        }
+
+        // Check if the jump boost effect is active and update its timer
+        if (isJumpingBoosted)
+        {
+            jumpBoostTimer -= Time.deltaTime;
+            if (jumpBoostTimer <= 0f)
+            {
+                isJumpingBoosted = false;
+                isJumpBoosted = false;
+            }
+        }
+    }
+
+    public void StartInvertedControlsEffect(float duration)
+    {
+        isInvertedControls = true;
+        invertedControlsDuration = duration;
+        invertedControlsTimer = duration;
+    }
+
+    public void StartJumpBoostEffect(float height, float duration)
+    {
+        // Apply the jump boost effect to the player
+        isJumpBoosted = true;
+        jumpBoostHeight = height;
+        jumpBoostDuration = duration;
+        jumpBoostTimer = duration;
+    }
+
+    private void EndJumpBoostEffect()
+    {
+        // End the jump boost effect
+        isJumpBoosted = false;
+        // Reset any changes to the player's jump here if needed
+        // For example, reset the jump force or height to the original values.
     }
 
     private void FixedUpdate()
@@ -151,7 +216,6 @@ public class PlayerMovement : MonoBehaviour
         // Game over logic or player death animation here
         deathSoundEffect.Play();
         UnityEngine.Debug.Log("Player has died");
-
 
         rb.bodyType = RigidbodyType2D.Static;
         animator.SetTrigger("death");
