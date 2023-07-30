@@ -17,4 +17,9 @@ public class HealthBar : MonoBehaviour
     {
         slider.value = GameObject.FindWithTag("Player").GetComponent<PlayerHealth>().currentHealth;
     }
+
+    void Update()
+    {
+        setHealth(GameObject.FindWithTag("Player").GetComponent<PlayerHealth>().currentHealth);
+    }
 }
