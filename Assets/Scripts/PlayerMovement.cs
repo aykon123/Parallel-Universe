@@ -4,42 +4,55 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    // Private variables for player movement and components
     private Rigidbody2D rb;
     private BoxCollider2D coll;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
 
-    [SerializeField] private LayerMask jumpableGround;
+    [SerializeField] private LayerMask jumpableGround; // Layer mask for detecting jumpable ground
 
+    // Variables for knockback effect
     [SerializeField] private float knockbackForce = 10f;
     [SerializeField] private float knockbackDuration = 0.5f;
     private bool isKnockback = false;
     private float knockbackTimer = 0f;
     private Vector2 knockbackDirection;
 
-    [SerializeField] private bool enableSlide = true;
-    [SerializeField] private float slideForce = 2f;
+    [SerializeField] private bool enableSlide = true; // Enable sliding effect
+    [SerializeField] private float slideForce = 2f; // Force applied when sliding
 
-    [SerializeField] private AudioSource jumpSoundEffect;
-    [SerializeField] private float fallThreshold = -10f;
-    [SerializeField] private float respawnDelay = 2f;
-    private Vector2 respawnPosition;
+    [SerializeField] private AudioSource jumpSoundEffect; // Sound effect for jumping
+    [SerializeField] private float fallThreshold = -10f; // Fall threshold for player death
+    [SerializeField] private float respawnDelay = 2f; // Delay before respawning after death
+    private Vector2 respawnPosition; // Respawn position for the player
 
-    private bool isGrounded = false;
-    private bool canDoubleJump = false;
-    [SerializeField] private bool disableDoubleJump = false;
+    private bool isGrounded = false; // Flag for checking if the player is grounded
+    private bool canDoubleJump = false; // Flag for enabling double jump
 
-    [SerializeField] private AudioSource deathSoundEffect;
+    private bool isInvertedControls = false; // Flag for inverted controls effect
+    private float invertedControlsDuration = 5f; // Duration of inverted controls effect
+    private float invertedControlsTimer = 0f; // Timer for inverted controls effect
 
+    [SerializeField] private bool disableDoubleJump = false; // Disable double jump if true
 
+    [SerializeField] private AudioSource deathSoundEffect; // Sound effect for player death
+
+    private bool isJumpBoosted = false; // Flag for jump boost effect
+    private float jumpBoostHeight = 20f; // Height of jump boost
+    private float jumpBoostDuration = 5f; // Default duration for the jump boost
+    private float jumpBoostTimer = 0f; // Timer for the jump boost effect
+    private bool isJumpingBoosted = false; // Flag for checking if the jump boost effect is active
 
     private void Start()
     {
+        // Get references to the components
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
 
+        // Set the respawn position to the initial position of the player
         respawnPosition = transform.position;
     }
 
@@ -94,8 +107,9 @@ public class PlayerMovement : MonoBehaviour
             if (isGrounded)
             {
                 rb.velocity = new Vector2(rb.velocity.x, 12f);
-                if(!disableDoubleJump){
-                canDoubleJump = true;
+                if (!disableDoubleJump)
+                {
+                    canDoubleJump = true;
                 }
 
                 // Jump Sound Effect
@@ -116,6 +130,62 @@ public class PlayerMovement : MonoBehaviour
         {
             Die();
         }
+
+        if (isInvertedControls)
+        {
+            // Invert horizontal movement
+            float invertedDirX = -Input.GetAxisRaw("Horizontal");
+            rb.velocity = new Vector2(invertedDirX * 7f, rb.velocity.y);
+
+            // Update inverted controls timer
+            invertedControlsTimer -= Time.deltaTime;
+            if (invertedControlsTimer <= 0f)
+            {
+                isInvertedControls = false;
+            }
+        }
+
+        // Check for the jump boost input and apply the effect
+        if (Input.GetButtonDown("Jump") && isJumpBoosted && isGrounded && !isJumpingBoosted)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpBoostHeight);
+            isJumpingBoosted = true;
+        }
+
+        // Check if the jump boost effect is active and update its timer
+        if (isJumpingBoosted)
+        {
+            jumpBoostTimer -= Time.deltaTime;
+            if (jumpBoostTimer <= 0f)
+            {
+                isJumpingBoosted = false;
+                isJumpBoosted = false;
+            }
+        }
+    }
+
+    public void StartInvertedControlsEffect(float duration)
+    {
+        isInvertedControls = true;
+        invertedControlsDuration = duration;
+        invertedControlsTimer = duration;
+    }
+
+    public void StartJumpBoostEffect(float height, float duration)
+    {
+        // Apply the jump boost effect to the player
+        isJumpBoosted = true;
+        jumpBoostHeight = height;
+        jumpBoostDuration = duration;
+        jumpBoostTimer = duration;
+    }
+
+    private void EndJumpBoostEffect()
+    {
+        // End the jump boost effect
+        isJumpBoosted = false;
+        // Reset any changes to the player's jump here if needed
+        // For example, reset the jump force or height to the original values.
     }
 
     private void FixedUpdate()
@@ -149,13 +219,13 @@ public class PlayerMovement : MonoBehaviour
     {
         // Game over logic or player death animation here
         deathSoundEffect.Play();
-        UnityEngine.Debug.Log("Player has died"); // Specify UnityEngine.Debug
+        UnityEngine.Debug.Log("Player has died");
+
         rb.bodyType = RigidbodyType2D.Static;
         animator.SetTrigger("death");
 
         // Reset player position to the respawn position
         transform.position = respawnPosition;
-
 
         // Delay before re-enabling player control
         StartCoroutine(EnablePlayerControl(respawnDelay));

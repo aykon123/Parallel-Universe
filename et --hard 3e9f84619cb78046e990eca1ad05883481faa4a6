@@ -1,0 +1,125 @@
+[33mcommit 7c2da4bff49e7feaaf5e967e4e83f19de5eee514[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Yekta Kücük <yk020@hdm-stuttgart.de>
+Date:   Tue Jul 25 18:24:23 2023 +0200
+
+    temp commit ERRORS
+
+[33mcommit cbd305c18eedcf55a410c23dc7da8937e969b8fc[m
+Author: Yekta Kücük <yk020@hdm-stuttgart.de>
+Date:   Wed Jun 28 23:23:35 2023 +0200
+
+    Level 2 and bug fix
+
+[33mcommit 3e9f84619cb78046e990eca1ad05883481faa4a6[m
+Author: ak298 <ak298@hdm-stuttgart.de>
+Date:   Wed Jun 28 22:51:33 2023 +0200
+
+     portal shard portal and animations
+
+[33mcommit e1438b4c3cdfc389b99cea951408a57fb1bc0807[m
+Author: Yekta Kücük <yk020@hdm-stuttgart.de>
+Date:   Wed Jun 28 22:46:00 2023 +0200
+
+    Attack testing
+
+[33mcommit c0e9b7e478948d0697e80a7ff246de43d0110650[m
+Author: Yekta Kücük <yk020@hdm-stuttgart.de>
+Date:   Wed Jun 28 21:58:54 2023 +0200
+
+    Fall to Death
+
+[33mcommit a71fec7cbab05ca242083e961d8c0fa1e69b9102[m
+Author: ak298 <ak298@hdm-stuttgart.de>
+Date:   Wed Jun 28 20:16:15 2023 +0200
+
+    Original Character + Animations and Background
+
+[33mcommit 50fd572e80deaf884b264227ee29924f0f9ace0d[m
+Author: Yekta Kücük <yk020@hdm-stuttgart.de>
+Date:   Tue Jun 27 20:15:38 2023 +0200
+
+    Sound und Musik hinzugefügt und weitere Gameplay Adjustments (Double Jump)
+
+[33mcommit be4ea7fe0a788aeb6511b8a4d87b4e6c158a09d1[m
+Author: Yekta Kücük <yk020@hdm-stuttgart.de>
+Date:   Tue Jun 27 19:31:02 2023 +0200
+
+    Bug fix
+
+[33mcommit 74c9c82b39ac348f8b17a4f83d5bbe9b126b5b1e[m
+Author: Yekta Kücük <yk020@hdm-stuttgart.de>
+Date:   Tue Jun 27 19:14:37 2023 +0200
+
+    Jump Attacke
+
+[33mcommit 6d85b0b5a43d3c94824f9bfcd4027e7e71bd7f89[m
+Author: Yekta Kücük <yk020@hdm-stuttgart.de>
+Date:   Tue Jun 27 17:56:49 2023 +0200
+
+    Sound Dateien und Jump Sound
+
+[33mcommit 1bc92913e61b6f2386f6679c7370ca57b7e13cd5[m
+Author: Yekta Kücük <yk020@hdm-stuttgart.de>
+Date:   Tue Jun 27 17:31:15 2023 +0200
+
+    Menu Hinzugefugt
+
+[33mcommit d2a3567a9dfe36f1ae5f61388120842aac5d2912[m
+Author: Mustafa Guenes <musti16071997@googlemail.com>
+Date:   Tue Jun 27 03:40:58 2023 +0200
+
+    portal und leitern
+
+[33mcommit 5a686379a8a2d9551ea0b4581d3b5f4833815259[m
+Author: Yekta Kücük <yk020@hdm-stuttgart.de>
+Date:   Mon Jun 26 00:09:20 2023 +0200
+
+    Bug Fix
+
+[33mcommit 0579d261e30df6b5b90bdb5d76c8c7d7c1b434ae[m
+Author: Yekta Kücük <yk020@hdm-stuttgart.de>
+Date:   Mon Jun 26 00:05:48 2023 +0200
+
+    Animationen Hinzugefügt
+
+[33mcommit 6f405fd3158308a42b62ace622ef05f7053d1e0c[m
+Author: Yekta Kücük <yk020@hdm-stuttgart.de>
+Date:   Sun Jun 25 23:34:08 2023 +0200
+
+    Knockback added
+
+[33mcommit dd1c03385e11f5c4bd1fee2909019574020c49a4[m
+Author: Yekta Kücük <yk020@hdm-stuttgart.de>
+Date:   Sun Jun 25 23:07:35 2023 +0200
+
+    kleine tests
+
+[33mcommit 9d2680ee8d69460938623d5bda13daeda9237e7d[m
+Author: Yekta Kücük <yk020@hdm-stuttgart.de>
+Date:   Sun Jun 25 20:41:33 2023 +0200
+
+    kleine tests
+
+[33mcommit a8038eec1d9b78874616a51961534867870c0a9b[m
+Author: Mustafa Guenes <musti16071997@googlemail.com>
+Date:   Sun Jun 25 06:23:08 2023 +0200
+
+    spikes, moving platforms, collect items and death anim
+
+[33mcommit 0a1171ed722861b5682de2f819b3d7bc944270f0[m
+Author: Yekta Kücük <yk020@hdm-stuttgart.de>
+Date:   Sat Jun 24 22:59:03 2023 +0200
+
+    Skripte hinzugefügt für Player und Enemy
+
+[33mcommit 2b48ae2cc5878d3953896e967b3fd528bdf01c49[m
+Author: Mustafa Guenes <musti16071997@googlemail.com>
+Date:   Fri Jun 23 21:50:20 2023 +0200
+
+    initial
+
+[33mcommit 8c08aa133ea3b3b4da166e77c5df120f8f30134a[m
+Author: Aykon <36618254+aykon123@users.noreply.github.com>
+Date:   Tue May 23 16:11:25 2023 +0200
+
+    Initial commit

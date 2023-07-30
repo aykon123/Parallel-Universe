@@ -5,28 +5,18 @@ using UnityEngine;
 public class EnemyDamage : MonoBehaviour
 {
     public int damageAmount = 10;
-    public PlayerHealth playerHealth;
 
+    // This method will be called automatically when the enemy collides with another object
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        // Get the health component of the collided object
+        PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+
+        // Check if the collided object has a PlayerHealth component
+        if (playerHealth != null)
         {
+            // If the collided object has a PlayerHealth component, apply damage to it
             playerHealth.TakeDamage(damageAmount);
         }
     }
 }
-/*
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
-
-            if (playerHealth != null)
-            {
-                playerHealth.TakeDamage(damageAmount);
-            }
-        }
-    }
-}
-*/
