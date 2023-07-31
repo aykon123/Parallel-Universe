@@ -7,14 +7,10 @@
 ## Technologien
 
 Das Projekt wurde mithilfe folgender Technologien und Entwicklungswerkzeuge umgesetzt:
-
-    Unity: Eine leistungsstarke Game Engine, die die Entwicklung von 2D- und 3D-Spielen ermöglicht.
-
-    Adobe Photoshop: Zur Erstellung und Bearbeitung von hochwertigen Grafiken und Assets.
-
-    Adobe Illustrator: Für die Gestaltung von Vektorgrafiken und Illustrationen.
-
-    Aseprite: Spezialisierte Software für die Pixel Art Gestaltung, die für die Entwicklung von detailreichen Pixelgrafiken verwendet wurde.
+- Unity: Eine leistungsstarke Game Engine, die die Entwicklung von 2D- und 3D-Spielen ermöglicht.
+- Adobe Photoshop: Zur Erstellung und Bearbeitung von hochwertigen Grafiken und Assets.
+- Adobe Illustrator: Für die Gestaltung von Vektorgrafiken und Illustrationen.
+- Aseprite: Spezialisierte Software für die Pixel Art Gestaltung, die für die Entwicklung von detailreichen Pixelgrafiken verwendet wurde.
 
 ## Zielplattform
 
