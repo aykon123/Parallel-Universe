@@ -1,5 +1,8 @@
 # Parallel Universe - 2D Jump and Run Game
 
+![alt text] (https://github.com/aykon123/Parallel-Universe/blob/main/Screenshots/Screenshot%20Asian.png)
+![alt text] (https://github.com/aykon123/Parallel-Universe/blob/main/Screenshots/Screenshot%20Cyberpunk.png)
+
 ## Projektbeschreibung
 
 "Parallel Universe" ist ein 2D Jump and Run Spiel, das in Unity entwickelt wurde. Der Spieler kann zwischen zwei Welten wechseln, um verschiedene Level zu absolvieren. Dabei muss er Gegnern und Hindernissen ausweichen, um das Ziel zu erreichen. Das Spiel bietet ein unterhaltsames Spielerlebnis mit spannenden Herausforderungen und einem innovativen Konzept.
