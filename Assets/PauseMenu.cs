@@ -44,11 +44,10 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
     }
 
-
-    //potentially not needed
-    public void Options()
+    public void LevelSelect()
     {
-        
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(7);
     }
 
     public void ReturnMainMenu()

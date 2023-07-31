@@ -35,7 +35,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1864, y: -92}
+  m_AnchoredPosition: {x: 1616, y: -83}
   m_SizeDelta: {x: 218.6091, y: 21.294708}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3861200783986634919
@@ -70,7 +70,7 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: b8fceb255ba827142a1670e8d24c1ec2, type: 3}
     m_FontSize: 8
     m_FontStyle: 2
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 300
     m_Alignment: 0
@@ -298,7 +298,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Options
+  m_text: Levels
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a354f0b452dd3664499af51d31588679, type: 2}
   m_sharedMaterial: {fileID: -2367310569090681816, guid: a354f0b452dd3664499af51d31588679, type: 2}
@@ -1759,7 +1759,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4103152324142293652}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: Options
+        m_MethodName: LevelSelect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -11,15 +11,16 @@ public class HealthBarChange : MonoBehaviour
 
     void Start()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 1)
-        {
-            HealthBar.SetActive(true);
-            HealthBarCyber.SetActive(false);
-        }
-        else
+        if (SceneManager.GetActiveScene().buildIndex == 2)
         {
             HealthBar.SetActive(false);
             HealthBarCyber.SetActive(true);
+        }
+        else
+        {
+            
+            HealthBar.SetActive(true);
+            HealthBarCyber.SetActive(false);
         }
     }
 
