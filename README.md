@@ -1,11 +1,10 @@
-Parallel Universe - 2D Jump and Run Game
+# Parallel Universe - 2D Jump and Run Game
 
-Gameplay Screenshot
-Projektbeschreibung
+## Projektbeschreibung
 
 "Parallel Universe" ist ein 2D Jump and Run Spiel, das in Unity entwickelt wurde. Der Spieler kann zwischen zwei Welten wechseln, um verschiedene Level zu absolvieren. Dabei muss er Gegnern und Hindernissen ausweichen, um das Ziel zu erreichen. Das Spiel bietet ein unterhaltsames Spielerlebnis mit spannenden Herausforderungen und einem innovativen Konzept.
 
-Technologien
+## Technologien
 
 Das Projekt wurde mithilfe folgender Technologien und Entwicklungswerkzeuge umgesetzt:
 
@@ -17,12 +16,12 @@ Das Projekt wurde mithilfe folgender Technologien und Entwicklungswerkzeuge umge
 
     Aseprite: Spezialisierte Software für die Pixel Art Gestaltung, die für die Entwicklung von detailreichen Pixelgrafiken verwendet wurde.
 
-    Zielplattform
+## Zielplattform
 
 Das Spiel ist für Desktop-Computer optimiert und kann auf den Betriebssystemen Windows, macOS und Linux gespielt werden.
 
 
-Entwickler
+## Entwickler
 
 Dieses Projekt wurde von folgenden Personen entwickelt:
 
@@ -31,7 +30,7 @@ Dieses Projekt wurde von folgenden Personen entwickelt:
     Aykon Kücük
     Rometh Umic-Senol
 
-    Installation
+## Installation
 
 Um das Spiel zu spielen, folgen Sie bitte diesen Schritten:
 
