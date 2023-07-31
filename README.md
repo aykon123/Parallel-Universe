@@ -24,17 +24,17 @@ Das Spiel ist für Desktop-Computer optimiert und kann auf den Betriebssystemen 
 ## Entwickler
 
 Dieses Projekt wurde von folgenden Personen entwickelt:
-
-    Yekta Leon Kücük
-    Mustafa Günes
-    Aykon Kücük
-    Rometh Umic-Senol
+- Yekta Leon Kücük
+- Mustafa Günes
+- Aykon Kücük
+- Rometh Umic-Senol
 
 ## Installation
 
 Um das Spiel zu spielen, folgen Sie bitte diesen Schritten:
 
     Klonen Sie das Repository auf Ihren lokalen Computer.
+        git clone https://github.com/aykon123/Parallel-Universe.git
 
     Öffnen Sie das Projekt in Unity und stellen Sie sicher, dass Sie die aktuellste Version verwenden.
 
