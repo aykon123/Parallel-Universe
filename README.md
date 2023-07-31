@@ -1,7 +1,7 @@
 # Parallel Universe - 2D Jump and Run Game
 
-![alt text] (https://github.com/aykon123/Parallel-Universe/blob/main/Screenshots/Screenshot%20Asian.png)
-![alt text] (https://github.com/aykon123/Parallel-Universe/blob/main/Screenshots/Screenshot%20Cyberpunk.png)
+![Gameplay Screenshot](https://github.com/aykon123/Parallel-Universe/blob/main/Screenshots/Screenshot%20Cyberpunk.png)
+
 
 ## Projektbeschreibung
 
