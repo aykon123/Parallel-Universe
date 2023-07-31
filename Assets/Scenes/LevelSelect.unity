@@ -745,7 +745,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1712037499}
         m_TargetAssemblyTypeName: LevelSelect, Assembly-CSharp
         m_MethodName: Back
         m_Mode: 1
@@ -1309,9 +1309,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1712037495}
+      - m_Target: {fileID: 1712037499}
         m_TargetAssemblyTypeName: LevelSelect, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Level2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

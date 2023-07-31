@@ -11,7 +11,7 @@ public class HealthBarChange : MonoBehaviour
 
     void Start()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 5 || SceneManager.GetActiveScene().buildIndex == 2)
+        if (SceneManager.GetActiveScene().buildIndex == 3 || SceneManager.GetActiveScene().buildIndex == 5)
         {
             HealthBar.SetActive(false);
             HealthBarCyber.SetActive(true);
