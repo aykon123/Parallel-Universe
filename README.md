@@ -32,10 +32,8 @@ Dieses Projekt wurde von folgenden Personen entwickelt:
 ## Installation
 
 Um das Spiel zu spielen, folgen Sie bitte diesen Schritten:
+Klonen Sie das Repository auf Ihren lokalen Computer.
+    git clone https://github.com/aykon123/Parallel-Universe.git
 
-    Klonen Sie das Repository auf Ihren lokalen Computer.
-        git clone https://github.com/aykon123/Parallel-Universe.git
-
-    Öffnen Sie das Projekt in Unity und stellen Sie sicher, dass Sie die aktuellste Version verwenden.
-
-    Kompilieren Sie das Projekt in Unity und führen Sie es auf Ihrem Desktop aus.
+Öffnen Sie das Projekt in Unity und stellen Sie sicher, dass Sie die aktuellste Version verwenden.
+Kompilieren Sie das Projekt in Unity und führen Sie es auf Ihrem Desktop aus.
